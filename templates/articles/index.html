@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Home page</h1>
+    <div class="row">
+        {% for article in articles %}
+            <div class="col-md-3 p-2 m-4" style="width: 18rem; border: 2px solid green;">
+                <h4>{{ article.title }}</h4>
+                <p class="">{{ article.content|truncatewords:15 }}...</p>
+                <a href="{% url 'detail' article.id %}" class="btn btn-sm btn-outline-primary">Read More</a>
+                {% if request.user == article.author %}
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

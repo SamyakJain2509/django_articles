@@ -1,0 +1,9 @@
+<div class="sidebar">
+    <h3>Sidebar</h3>
+    <p>
+        <a href="{% url 'publish' %}">Publish your own article!</a>
+        
+    </p>
+    <a href="{% url 'profile' request.user.username %}">View profile</a> <br>
+    <a href="{% url 'edit_profile' %}">Edit profile</a>
+</div>

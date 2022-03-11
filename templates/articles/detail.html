@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mb-3">{{ article.title }}</h1>
+    <img src="/media/{{ article.image }}" style="height: 200px; width: 200px;">
+    <p class="lead">{{ article.content|linebreaks }}</p>
+    <br><br>
+    <small class="text-muted">by <a href="{% url 'profile' article.author.username %}">{{ article.author }}</a></small> <br><br>
+    <img src="/media/{{ article.author.profile.pic }}" style="border-radius: 50%; height: 100px;" alt="ok" />
+{% endblock %}

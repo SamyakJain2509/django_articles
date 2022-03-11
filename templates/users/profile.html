@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_title %}{{ user.username }} | Django Blog{% endblock head_title %}
+
+{% block content %}
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="card col-lg-6 offset-lg-3 mb-3">
+      <div class="row">
+        <img class="card-img-top col-sm-3 col-4 my-3" src="{{ profile.pic.url }}" style="height: 40%; width:40%; float:left;" alt="{{ user.username }}">
+        <div class="card-body col-9">
+          <h2 class="card-title my-3">{{ user.username }}</h2>
+          <p>Last login on: {{ user.last_login }}</p>
+          <p class="card-text">{{ user.profile.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
